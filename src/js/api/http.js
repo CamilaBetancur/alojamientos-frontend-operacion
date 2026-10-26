@@ -1,7 +1,8 @@
 import { getToken } from '../auth/session.service.js';
 import { formatApiError } from '../utils/errorMessages.js';
+import { normalizeApiBaseUrl } from './url.js';
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = normalizeApiBaseUrl(import.meta.env.VITE_API_URL);
 
 function parseBody(text) {
   if (!text) {
